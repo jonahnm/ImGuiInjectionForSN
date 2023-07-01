@@ -17,26 +17,26 @@ using Plsworkthistime;
 namespace SNIMGUILib
 {
     [BepInPlugin("SNIMGUI", "SNIMGUI", "1.0.0")]
-    internal class Class1 : BaseUnityPlugin
+    public class Class1 : BaseUnityPlugin
     {
         [DllImport("untitled1.dll")]
-        public static extern void begin(IntPtr a);
+        internal static extern void begin(IntPtr a);
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void callback(IntPtr a);
-        public static GCHandle callbackgch;
-        public static callback del;
-        public static bool ready = false;
-        public static SharpDX.Direct3D11.Device device;
-        public static SharpDX.Direct3D11.DeviceContext deviceContext;
-        public static IntPtr window;
-        public static RenderTargetView render_target;
-        public static ManualLogSource logger;
-        public static bool cursorvisible = false;
+        internal delegate void callback(IntPtr a);
+        internal static GCHandle callbackgch;
+        internal static callback del;
+        internal static bool ready = false;
+        internal static SharpDX.Direct3D11.Device device;
+        internal static SharpDX.Direct3D11.DeviceContext deviceContext;
+        internal static IntPtr window;
+        internal static RenderTargetView render_target;
+        internal static ManualLogSource logger;
+        internal static bool cursorvisible = false;
         private static Dictionary<KeyCode, ImGuiKey> keytoim = new Dictionary<KeyCode, ImGuiKey>();
         private static string previnput = "";
         public delegate void imguievent();
         public static event imguievent ImGuiEvent = () => { };
-        public static Harmony harmony = new Harmony("ImGUIINJECTIONFORSN");
+        internal static Harmony harmony = new Harmony("ImGUIINJECTIONFORSN");
 
         void Awake()
         {
