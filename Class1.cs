@@ -31,7 +31,7 @@ namespace SNIMGUILib
         internal static IntPtr window;
         internal static RenderTargetView render_target;
         internal static ManualLogSource logger;
-        internal static bool cursorvisible = false;
+        public static bool cursorvisible = false;
         private static Dictionary<KeyCode, ImGuiKey> keytoim = new Dictionary<KeyCode, ImGuiKey>();
         private static string previnput = "";
         public delegate void imguievent();
